@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Image Rotation</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <script>
+        // Function to change background based on screen orientation
+        const changeBackground = () => {
+            if (window.innerWidth > window.innerHeight) {
+                // Landscape Mode: Set landscape background image
+                document.body.style.backgroundImage = "url('https://photovideocreative.com/wordpress/wp-content/uploads/2017/11/Paysage-en-orientation-paysage.jpg')";
+            } else {
+                // Portrait Mode: Set portrait background image
+                document.body.style.backgroundImage = "url('https://photovideocreative.com/wordpress/wp-content/uploads/2017/11/Portrait-en-orientation-portrait.jpg')";
+            }
+        };
 
+        // Initially set background based on screen size
+        changeBackground();
+
+        // Update background image when window is resized
+        window.addEventListener("resize", changeBackground);
+    </script>
 </body>
-
 </html>
